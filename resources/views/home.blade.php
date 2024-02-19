@@ -19,7 +19,16 @@
             Google Maps
           </div>
           <div class="card-body ">
-            <div id="map" class="map"></div>
+          <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}"></script>
+    <script>
+        function initMap() {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: -6.2088, lng: 106.8456 }, // Koordinat Jakarta
+                zoom: 12,
+            });
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_API_KEY') }}&callback=initMap"></script>
           </div>
         </div>
       </div>
