@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('assets') }}/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="{{ asset('assets') }}/img/favicon.png">
+  <link rel="icon" type="image/png" href="{{ asset('assets') }}/img/pp.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <!-- Extra details for Live View on GitHub Pages -->
   <title>
@@ -19,7 +19,12 @@
   <link href="{{ asset('assets') }}/css/now-ui-dashboard.css?v=1.3.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{ asset('assets') }}/demo/demo.css" rel="stylesheet" />
- 
+    <!-- Memuat Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+   <!-- ApexCharts CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/apexcharts@3.26.1/dist/apexcharts.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
 
 </head>
@@ -48,12 +53,12 @@
   <script src="{{ asset('assets') }}/js/now-ui-dashboard.min.js?v=1.3.0" type="text/javascript"></script>
   <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="{{ asset('assets') }}/demo/demo.js"></script>
+  {{-- Script membuat Grafik --}}
+   <!-- ApexCharts JS -->
+   <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.26.1/dist/apexcharts.min.js"></script>
 
-  <!-- Memuat jQuery -->
-<script src="{{ asset('assets') }}/js/core/jquery.min.js"></script>
 
-<!-- Memuat Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 
   @stack('js')
 </body>

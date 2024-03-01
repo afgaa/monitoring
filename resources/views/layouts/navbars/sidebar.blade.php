@@ -2,7 +2,7 @@
   <!--
     Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
 -->
-  <div class="logo">
+  <div class="logo" >
     <img src="assets\img\pp.png">
   </div>
   <div class="sidebar-wrapper" id="sidebar-wrapper">

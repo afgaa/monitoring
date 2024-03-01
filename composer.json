@@ -6,6 +6,9 @@
     "license": "MIT",
     "require": {
         "php": "^7.3|^8.0",
+        "arielmejiadev/larapex-charts": "^6.0",
+        "carbondate/carbon": "^1.17",
+        "consoletvs/charts": "6.*",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^8.75",

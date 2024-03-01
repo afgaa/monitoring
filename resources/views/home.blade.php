@@ -6,6 +6,7 @@
 ])
 
 @section('content')
+<br><br><br>
   <div>
     <img src="assets\img\t.jpeg" alt="t" >
   </div>

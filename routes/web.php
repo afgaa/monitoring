@@ -8,6 +8,7 @@ use App\Http\Controllers\PowerFaktorController;
 use App\Http\Controllers\HarmonisaController;
 use App\Http\Controllers\TemperaturController;
 use App\Http\Controllers\TemperatureController;
+use App\Http\Controllers\HariController;
 
 
 /*
@@ -38,6 +39,7 @@ Route::get('/powerfaktor', [PowerFaktorController::class, 'powerfaktor'])->name(
 Route::get('/harmonisa', [HarmonisaController::class, 'harmonisa'])->name('harmonisa');
 Route::get('/temperatur', [TemperaturController::class, 'temperatur'])->name('temperatur');
 Route::get('/temperature', [TemperatureController::class, 'temperature'])->name('temperature');
+Route::get('/hari', [HariController::class, 'hari'])->name('hari');
 
 
 Route::group(['middleware' => 'auth'], function () {

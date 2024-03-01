@@ -3958,6 +3958,9 @@ Created using IcoMoon - icomoon.io
     position: relative;
     padding: 0.5rem 0.7rem;
     z-index: 4;
+    width: 200px;
+    height: 200px;
+
 }
 
 .sidebar .logo a.logo-mini,

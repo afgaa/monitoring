@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use App\Charts\Tekanan1Chart;
 
 class TekananController extends Controller
 {
-    public function tekanan()
+    public function tekanan(Tekanan1Chart $chart)
     {
-        return view('tekanan.index');
+        session()->flash('error', 'Pesan Berhasil');
+        return view('tekanan.index', ['chart' => $chart->build()]);
     }
+    
 }
