@@ -1,7 +1,7 @@
 @extends('layouts.app', [
 'namePage' => '',
 'class' => 'login-page sidebar-mini ',
-'activePage' => 'daya',
+'activePage' => 'harus',
 'backgroundImage' => asset('now') . "/img/bg14.jpg",
 ])
 
@@ -30,10 +30,10 @@
         <div class="col-lg-6">
             <div class="card card-chart">
                 <div class="card-header">
-                    <h5 class="card-category">Daya Aktif (P)</h5>
+                    <h5 class="card-category">ITHD R</h5>
                 </div>
                 <div class="card-body">
-                    <div id="daya1"></div>
+                    <div id="harus1"></div>
                 </div>
             </div>
         </div>
@@ -41,10 +41,10 @@
         <div class="col-lg-6">
             <div class="card card-chart">
                 <div class="card-header">
-                    <h5 class="card-category">Daya Semu(S)</h5>
+                    <h5 class="card-category">ITHD S</h5>
                 </div>
                 <div class="card-body">
-                    <div id="daya2"></div>
+                    <div id="harus2"></div>
                 </div>
             </div>
         </div>
@@ -54,10 +54,10 @@
         <div class="col-md-6">
             <div class="card  card-tasks">
                 <div class="card-header ">
-                    <h5 class="card-category">Daya Reaktif (Q)</h5>
+                    <h5 class="card-category">ITHD T</h5>
                 </div>
                 <div class="card-body">
-                    <div id="daya3"></div>
+                    <div id="harus3"></div>
                 </div>
             </div>
         </div>
@@ -101,13 +101,13 @@
 
 </script>
 
-{{-- Chart daya 1 --}}
+{{-- Chart harus 1 --}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const dayaChart1El = document.querySelector('#daya1');
-        const dayaChart1Config = {
+        const harusChart1El = document.querySelector('#harus1');
+        const harusChart1Config = {
             series: [101],
-            labels: ['Daya Aktif (P)'],
+            labels: ['ITHD R'],
             chart: {
                 width: 400,
                 height: 300,
@@ -175,9 +175,9 @@
             }
         };
 
-        if (typeof dayaChart1El !== undefined && dayaChart1El !== null) {
-            const daya1 = new ApexCharts(dayaChart1El, dayaChart1Config);
-            daya1.render();
+        if (typeof harusChart1El !== undefined && harusChart1El !== null) {
+            const harus1 = new ApexCharts(harusChart1El, harusChart1Config);
+            harus1.render();
         }
     });
 
@@ -186,10 +186,10 @@
 {{-- Chart arus 2 --}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const dayaChart2El = document.querySelector('#daya2');
-        const dayaChart2Config = {
+        const harusChart2El = document.querySelector('#harus2');
+        const harusChart2Config = {
             series: [10],
-            labels: [' Daya Semu(S)'],
+            labels: ['ITHD S'],
             chart: {
                 width: 400,
                 height: 300,
@@ -257,9 +257,9 @@
             }
         };
 
-        if (typeof dayaChart2El !== undefined && dayaChart2El !== null) {
-            const daya2 = new ApexCharts(dayaChart2El, dayaChart2Config);
-            daya2.render();
+        if (typeof harusChart2El !== undefined && harusChart2El !== null) {
+            const harus2 = new ApexCharts(harusChart2El, harusChart2Config);
+            harus2.render();
         }
     });
 
@@ -268,10 +268,10 @@
 {{-- Chart daya 3 --}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const dayaChart3El = document.querySelector('#daya3');
-        const dayaChart3Config = {
+        const harusChart3El = document.querySelector('#harus3');
+        const harusChart3Config = {
             series: [10],
-            labels: ['Daya Reaktif (Q)'],
+            labels: ['ITHD T'],
             chart: {
                 width: 400,
                 height: 300,
@@ -339,9 +339,9 @@
             }
         };
 
-        if (typeof dayaChart3El !== undefined && dayaChart3El !== null) {
-            const daya3 = new ApexCharts(dayaChart3El, dayaChart3Config);
-            daya3.render();
+        if (typeof harusChart3El !== undefined && harusChart3El !== null) {
+            const harus3 = new ApexCharts(harusChart3El, harusChart3Config);
+            harus3.render();
         }
     });
 

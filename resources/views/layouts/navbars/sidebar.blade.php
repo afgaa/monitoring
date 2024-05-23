@@ -13,10 +13,10 @@
           <p>{{ __('Home') }}</p>
         </a>
       </li>
-      <li class="@if ($activePage == 'tekanan') active @endif">
-        <a href="{{ route('tekanan') }}">
+      <li class="@if ($activePage == 'tegangan') active @endif">
+        <a href="{{ route('tegangan') }}">
           <i class="now-ui-icons design_app"></i>
-          <p>{{ __('Tekanan') }}</p>
+          <p>{{ __('Tegangan') }}</p>
         </a>
       </li>
       <li class="@if ($activePage == 'arus') active @endif">
@@ -30,23 +30,29 @@
           <i class="now-ui-icons design_app"></i>
           <p>{{ __('Daya') }}</p>
         </a>
-      </li>
-      <li class="@if ($activePage == 'powerfaktor') active @endif">
-        <a href="{{ route('powerfaktor') }}">
+      </li>      
+      <li class="@if ($activePage == 'htegangan') active @endif">
+        <a href="{{ route('htegangan') }}">
           <i class="now-ui-icons design_app"></i>
-          <p>{{ __('Power Faktor') }}</p>
+          <p>{{ __('Harmonisa Tegangan ') }}</p>
         </a>
       </li>
-      <li class="@if ($activePage == 'harmonisa') active @endif">
-        <a href="{{ route('harmonisa') }}">
+      <li class="@if ($activePage == 'harus') active @endif">
+        <a href="{{ route('harus') }}">
           <i class="now-ui-icons design_app"></i>
-          <p>{{ __('Harmonisa') }}</p>
+          <p>{{ __('Harmonisa Arus ') }}</p>
         </a>
       </li>
-      <li class="@if ($activePage == 'temperatur') active @endif">
-        <a href="{{ route('temperatur') }}">
+      <li class="@if ($activePage == 'dmcr') active @endif">
+        <a href="{{ route('dmcr') }}">
           <i class="now-ui-icons design_app"></i>
-          <p>{{ __('Temperatur') }}</p>
+          <p>{{ __('DMCR') }}</p>
+        </a>
+      </li>
+      <li class="@if ($activePage == 'other') active @endif">
+        <a href="{{ route('other') }}">
+          <i class="now-ui-icons design_app"></i>
+          <p>{{ __('Other') }}</p>
         </a>
       </li>
       <li class="@if ($activePage == 'icons') active @endif">

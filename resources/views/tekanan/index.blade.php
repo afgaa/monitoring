@@ -32,8 +32,8 @@
                 <div class="card-header">
                     <h5 class="card-category">Tekanan 1</h5>
                 </div>
-                <div class="card-body text-center" id="chart1">
-                    <div id="tekananChart" max-width="400px"></div>
+                <div class="card-body">
+                    <div id="tekananChart1" max-width="400px"></div>
                 </div>
             </div>
         </div>
@@ -43,7 +43,7 @@
                 <div class="card-header">
                     <h5 class="card-category">Tekanan 2</h5>
                 </div>
-                <div class="card-body text-center" style="max-width: 400px margin: auto">
+                <div class="card-body">
                     <div id="tekananChart2"></div>
                 </div>
             </div>
@@ -78,7 +78,10 @@
         <div class="col-lg-6">
             <div class="card card-chart">
                 <div class="card-header">
-                    <h5 class="card-category">Global Sales</h5>
+                    <h5 class="card-category">Tekanan 5</h5>
+                </div>
+                <div class="card-body">
+                    <div id="tekananChart5" max-width="400px"></div>
                 </div>
             </div>
         </div>
@@ -86,35 +89,34 @@
         <div class="col-lg-6">
             <div class="card card-chart">
                 <div class="card-header">
-                    <h5 class="card-category">2018 Sales</h5>
+                    <h5 class="card-category">Tekanan 6</h5>
+                </div>
+                <div class="card-body">
+                    <div id="tekananChart6"></div>
                 </div>
             </div>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-md-6">
-            <div class="card  card-tasks">
-                <div class="card-header ">
-                    <h5 class="card-category">Backend development</h5>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="card">
+        <div class="col-lg-6">
+            <div class="card card-chart">
                 <div class="card-header">
-                    <h5 class="card-category">All Persons List</h5>
+                    <h5 class="card-category">Tekanan 7</h5>
+                </div>
+                <div class="card-body">
+                    <div id="tekananChart7" max-width="400px"></div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <div class="card  card-tasks">
-                <div class="card-header ">
-                    <h5 class="card-category">Backend development</h5>
+        <div class="col-lg-6">
+            <div class="card card-chart">
+                <div class="card-header">
+                    <h5 class="card-category">Tekanan 8</h5>
+                </div>
+                <div class="card-body">
+                    <div id="tekananChart8"></div>
                 </div>
             </div>
         </div>
@@ -129,7 +131,6 @@
         demo.initDashboardPageCharts();
 
     });
-
 </script>
 <script>
     $(document).ready(function () {
@@ -162,19 +163,20 @@
 {{-- Chart Tekanan 1 --}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const tekananChartEl = document.querySelector('#tekananChart');
-        const tekananChartConfig = {
-            series: [80],
+        const tekananChart1El = document.querySelector('#tekananChart1');
+        const tekananChart1Config = {
+            series: [10],
             labels: ['Tekanan 1'],
             chart: {
                 width: 400,
                 height: 300,
-                type: 'radialBar'
+                type: 'radialBar',
+                offsetY: -20, // Offset untuk membuat setengah lingkaran
             },
             plotOptions: {
                 radialBar: {
-                    startAngle: 0,
-                    endAngle: 360,
+                    startAngle: -90,
+                    endAngle: 90,
                     strokeWidth: '8',
                     hollow: {
                         margin: 2,
@@ -232,9 +234,9 @@
             }
         };
 
-        if (typeof tekananChartEl !== undefined && tekananChartEl !== null) {
-            const tekananhart1 = new ApexCharts(tekananChartEl, tekananChartConfig);
-            tekananhart1.render();
+        if (typeof tekananChart1El !== undefined && tekananChart1El !== null) {
+            const tekananChart1 = new ApexCharts(tekananChart1El, tekananChart1Config);
+            tekananChart1.render();
         }
     });
 
@@ -326,37 +328,40 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const tekananChart3El = document.querySelector('#tekananChart3');
-        const tekananChart3Options = {
-            series: [90],
+        const tekananChart3Config = {
+            series: [10],
             labels: ['Tekanan 3'],
             chart: {
-                height: 240,
-                type: 'radialBar'
+                width: 400,
+                height: 300,
+                type: 'radialBar',
+                offsetY: -20, // Offset untuk membuat setengah lingkaran
             },
             plotOptions: {
                 radialBar: {
-                    size: 150,
-                    offsetY: 10,
-                    startAngle: -150,
-                    endAngle: 150,
+                    startAngle: -90,
+                    endAngle: 90,
+                    strokeWidth: '8',
                     hollow: {
-                        size: '55%'
+                        margin: 2,
+                        size: '45%'
                     },
                     track: {
-                        background: '#fff',
-                        strokeWidth: '100%'
+                        strokeWidth: '50%',
+                        background: '#ddd'
                     },
                     dataLabels: {
+                        show: true,
                         name: {
                             offsetY: 15,
-                            color: '#333',
+                            color: '#697a8d',
                             fontSize: '15px',
                             fontWeight: '600',
                             fontFamily: 'Arial'
                         },
                         value: {
                             offsetY: -25,
-                            color: '#023047',
+                            color: '#697a8d',
                             fontSize: '32px',
                             fontWeight: '700',
                             fontFamily: 'Arial'
@@ -364,26 +369,19 @@
                     }
                 }
             },
-            colors: ['#3498db'],
             fill: {
-                type: 'gradient',
-                gradient: {
-                    shade: 'dark',
-                    shadeIntensity: 0.5,
-                    gradientToColors: ['#3498db'],
-                    inverseColors: true,
-                    opacityFrom: 1,
-                    opacityTo: 0.6,
-                    stops: [30, 70, 100]
-                }
+                type: 'solid',
+                colors: ['#fb8500']
             },
             stroke: {
-                dashArray: 5
+                lineCap: 'round'
             },
             grid: {
                 padding: {
-                    top: -35,
-                    bottom: -10
+                    top: -10,
+                    bottom: -15,
+                    left: -10,
+                    right: -10
                 }
             },
             states: {
@@ -400,9 +398,9 @@
             }
         };
 
-        if (typeof tekananChart3El !== 'undefined' && tekananChart3El !== null) {
-            const tekananChat3 = new ApexCharts(tekananChart3El, tekananChart3Options);
-            tekananChat3.render();
+        if (typeof tekananChart3El !== undefined && tekananChart3El !== null) {
+            const tekananChart3 = new ApexCharts(tekananChart3El, tekananChart3Config);
+            tekananChart3.render();
         }
     });
 
@@ -412,37 +410,40 @@
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const tekananChart4El = document.querySelector('#tekananChart4');
-        const tekananChart4Options = {
-            series: [100],
+        const tekananChart4Config = {
+            series: [10],
             labels: ['Tekanan 4'],
             chart: {
-                height: 240,
+                width: 400,
+                height: 300,
                 type: 'radialBar',
+                offsetY: -20, // Offset untuk membuat setengah lingkaran
             },
             plotOptions: {
                 radialBar: {
-                    size: 150,
                     startAngle: -90,
                     endAngle: 90,
-                    offsetY: 10,
+                    strokeWidth: '8',
                     hollow: {
-                        size: '55%'
+                        margin: 2,
+                        size: '45%'
                     },
                     track: {
-                        background: '#fff',
-                        strokeWidth: '100%'
+                        strokeWidth: '50%',
+                        background: '#ddd'
                     },
                     dataLabels: {
+                        show: true,
                         name: {
                             offsetY: 15,
-                            color: '#333',
+                            color: '#697a8d',
                             fontSize: '15px',
                             fontWeight: '600',
                             fontFamily: 'Arial'
                         },
                         value: {
                             offsetY: -25,
-                            color: '#023047',
+                            color: '#697a8d',
                             fontSize: '32px',
                             fontWeight: '700',
                             fontFamily: 'Arial'
@@ -450,26 +451,19 @@
                     }
                 }
             },
-            colors: ['#3498db'],
             fill: {
-                type: 'gradient',
-                gradient: {
-                    shade: 'dark',
-                    shadeIntensity: 0.5,
-                    gradientToColors: ['#3498db'],
-                    inverseColors: true,
-                    opacityFrom: 1,
-                    opacityTo: 0.6,
-                    stops: [30, 70, 100]
-                }
+                type: 'solid',
+                colors: ['#fb8500']
             },
             stroke: {
-                dashArray: 5
+                lineCap: 'round'
             },
             grid: {
                 padding: {
-                    top: -35,
-                    bottom: -10
+                    top: -10,
+                    bottom: -15,
+                    left: -10,
+                    right: -10
                 }
             },
             states: {
@@ -486,13 +480,343 @@
             }
         };
 
-        if (typeof tekananChart4El !== 'undefined' && tekananChart4El !== null) {
-            const tekananChart4 = new ApexCharts(tekananChart4El, tekananChart4Options);
+        if (typeof tekananChart4El !== undefined && tekananChart4El !== null) {
+            const tekananChart4 = new ApexCharts(tekananChart4El, tekananChart4Config);
             tekananChart4.render();
         }
     });
 
 </script>
+
+
+{{-- Chart Tekanan 5 --}}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tekananChart5El = document.querySelector('#tekananChart5');
+        const tekananChart5Config = {
+            series: [10],
+            labels: ['Tekanan 5'],
+            chart: {
+                width: 400,
+                height: 300,
+                type: 'radialBar',
+                offsetY: -20, // Offset untuk membuat setengah lingkaran
+            },
+            plotOptions: {
+                radialBar: {
+                    startAngle: -90,
+                    endAngle: 90,
+                    strokeWidth: '8',
+                    hollow: {
+                        margin: 2,
+                        size: '45%'
+                    },
+                    track: {
+                        strokeWidth: '50%',
+                        background: '#ddd'
+                    },
+                    dataLabels: {
+                        show: true,
+                        name: {
+                            offsetY: 15,
+                            color: '#697a8d',
+                            fontSize: '15px',
+                            fontWeight: '600',
+                            fontFamily: 'Arial'
+                        },
+                        value: {
+                            offsetY: -25,
+                            color: '#697a8d',
+                            fontSize: '32px',
+                            fontWeight: '700',
+                            fontFamily: 'Arial'
+                        }
+                    }
+                }
+            },
+            fill: {
+                type: 'solid',
+                colors: ['#fb8500']
+            },
+            stroke: {
+                lineCap: 'round'
+            },
+            grid: {
+                padding: {
+                    top: -10,
+                    bottom: -15,
+                    left: -10,
+                    right: -10
+                }
+            },
+            states: {
+                hover: {
+                    filter: {
+                        type: 'none'
+                    }
+                },
+                active: {
+                    filter: {
+                        type: 'none'
+                    }
+                }
+            }
+        };
+
+        if (typeof tekananChart5El !== undefined && tekananChart5El !== null) {
+            const tekananChart5 = new ApexCharts(tekananChart5El, tekananChart5Config);
+            tekananChart5.render();
+        }
+    });
+
+</script>
+
+{{-- Chart Tekanan 6 --}}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tekananChart6El = document.querySelector('#tekananChart6');
+        const tekananChart6Config = {
+            series: [10],
+            labels: ['Tekanan 6'],
+            chart: {
+                width: 400,
+                height: 300,
+                type: 'radialBar',
+                offsetY: -20, // Offset untuk membuat setengah lingkaran
+            },
+            plotOptions: {
+                radialBar: {
+                    startAngle: -90,
+                    endAngle: 90,
+                    strokeWidth: '8',
+                    hollow: {
+                        margin: 2,
+                        size: '45%'
+                    },
+                    track: {
+                        strokeWidth: '50%',
+                        background: '#ddd'
+                    },
+                    dataLabels: {
+                        show: true,
+                        name: {
+                            offsetY: 15,
+                            color: '#697a8d',
+                            fontSize: '15px',
+                            fontWeight: '600',
+                            fontFamily: 'Arial'
+                        },
+                        value: {
+                            offsetY: -25,
+                            color: '#697a8d',
+                            fontSize: '32px',
+                            fontWeight: '700',
+                            fontFamily: 'Arial'
+                        }
+                    }
+                }
+            },
+            fill: {
+                type: 'solid',
+                colors: ['#fb8500']
+            },
+            stroke: {
+                lineCap: 'round'
+            },
+            grid: {
+                padding: {
+                    top: -10,
+                    bottom: -15,
+                    left: -10,
+                    right: -10
+                }
+            },
+            states: {
+                hover: {
+                    filter: {
+                        type: 'none'
+                    }
+                },
+                active: {
+                    filter: {
+                        type: 'none'
+                    }
+                }
+            }
+        };
+
+        if (typeof tekananChart6El !== undefined && tekananChart6El !== null) {
+            const tekananChart6 = new ApexCharts(tekananChart6El, tekananChart6Config);
+            tekananChart6.render();
+        }
+    });
+
+</script>
+
+{{-- Chart Tekanan 7 --}}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tekananChart7El = document.querySelector('#tekananChart7');
+        const tekananChart7Config = {
+            series: [10],
+            labels: ['Tekanan 7'],
+            chart: {
+                width: 400,
+                height: 300,
+                type: 'radialBar',
+                offsetY: -20, // Offset untuk membuat setengah lingkaran
+            },
+            plotOptions: {
+                radialBar: {
+                    startAngle: -90,
+                    endAngle: 90,
+                    strokeWidth: '8',
+                    hollow: {
+                        margin: 2,
+                        size: '45%'
+                    },
+                    track: {
+                        strokeWidth: '50%',
+                        background: '#ddd'
+                    },
+                    dataLabels: {
+                        show: true,
+                        name: {
+                            offsetY: 15,
+                            color: '#697a8d',
+                            fontSize: '15px',
+                            fontWeight: '600',
+                            fontFamily: 'Arial'
+                        },
+                        value: {
+                            offsetY: -25,
+                            color: '#697a8d',
+                            fontSize: '32px',
+                            fontWeight: '700',
+                            fontFamily: 'Arial'
+                        }
+                    }
+                }
+            },
+            fill: {
+                type: 'solid',
+                colors: ['#fb8500']
+            },
+            stroke: {
+                lineCap: 'round'
+            },
+            grid: {
+                padding: {
+                    top: -10,
+                    bottom: -15,
+                    left: -10,
+                    right: -10
+                }
+            },
+            states: {
+                hover: {
+                    filter: {
+                        type: 'none'
+                    }
+                },
+                active: {
+                    filter: {
+                        type: 'none'
+                    }
+                }
+            }
+        };
+
+        if (typeof tekananChart7El !== undefined && tekananChart7El !== null) {
+            const tekananChart7 = new ApexCharts(tekananChart7El, tekananChart7Config);
+            tekananChart7.render();
+        }
+    });
+
+</script>
+
+{{-- Chart Tekanan 8 --}}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const tekananChart8El = document.querySelector('#tekananChart8');
+        const tekananChart8Config = {
+            series: [10],
+            labels: ['Tekanan 8'],
+            chart: {
+                width: 400,
+                height: 300,
+                type: 'radialBar',
+                offsetY: -20, // Offset untuk membuat setengah lingkaran
+            },
+            plotOptions: {
+                radialBar: {
+                    startAngle: -90,
+                    endAngle: 90,
+                    strokeWidth: '8',
+                    hollow: {
+                        margin: 2,
+                        size: '45%'
+                    },
+                    track: {
+                        strokeWidth: '50%',
+                        background: '#ddd'
+                    },
+                    dataLabels: {
+                        show: true,
+                        name: {
+                            offsetY: 15,
+                            color: '#697a8d',
+                            fontSize: '15px',
+                            fontWeight: '600',
+                            fontFamily: 'Arial'
+                        },
+                        value: {
+                            offsetY: -25,
+                            color: '#697a8d',
+                            fontSize: '32px',
+                            fontWeight: '700',
+                            fontFamily: 'Arial'
+                        }
+                    }
+                }
+            },
+            fill: {
+                type: 'solid',
+                colors: ['#fb8500']
+            },
+            stroke: {
+                lineCap: 'round'
+            },
+            grid: {
+                padding: {
+                    top: -10,
+                    bottom: -15,
+                    left: -10,
+                    right: -10
+                }
+            },
+            states: {
+                hover: {
+                    filter: {
+                        type: 'none'
+                    }
+                },
+                active: {
+                    filter: {
+                        type: 'none'
+                    }
+                }
+            }
+        };
+
+        if (typeof tekananChart8El !== undefined && tekananChart8El !== null) {
+            const tekananChart8 = new ApexCharts(tekananChart8El, tekananChart8Config);
+            tekananChart8.render();
+        }
+    });
+
+</script>
+
 <script src="{{ $chart->cdn() }}"></script>
 
 {{ $chart->script() }}

@@ -1,7 +1,7 @@
 @extends('layouts.app', [
 'namePage' => '',
 'class' => 'login-page sidebar-mini ',
-'activePage' => 'daya',
+'activePage' => 'dmcr',
 'backgroundImage' => asset('now') . "/img/bg14.jpg",
 ])
 
@@ -30,10 +30,10 @@
         <div class="col-lg-6">
             <div class="card card-chart">
                 <div class="card-header">
-                    <h5 class="card-category">Daya Aktif (P)</h5>
+                    <h5 class="card-category">Tekanan</h5>
                 </div>
                 <div class="card-body">
-                    <div id="daya1"></div>
+                    <div id="dmcr1"></div>
                 </div>
             </div>
         </div>
@@ -41,10 +41,10 @@
         <div class="col-lg-6">
             <div class="card card-chart">
                 <div class="card-header">
-                    <h5 class="card-category">Daya Semu(S)</h5>
+                    <h5 class="card-category">Suhu Minyak</h5>
                 </div>
                 <div class="card-body">
-                    <div id="daya2"></div>
+                    <div id="dmcr2"></div>
                 </div>
             </div>
         </div>
@@ -54,10 +54,21 @@
         <div class="col-md-6">
             <div class="card  card-tasks">
                 <div class="card-header ">
-                    <h5 class="card-category">Daya Reaktif (Q)</h5>
+                    <h5 class="card-category">Suhu Ambient</h5>
                 </div>
                 <div class="card-body">
-                    <div id="daya3"></div>
+                    <div id="dmcr3"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="card-category">Level Minyak</h5>
+                </div>
+                <div class="card-body">
+                    <div id="dmcr4"></div>
                 </div>
             </div>
         </div>
@@ -101,13 +112,13 @@
 
 </script>
 
-{{-- Chart daya 1 --}}
+{{-- Chart dmcr 1 --}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const dayaChart1El = document.querySelector('#daya1');
-        const dayaChart1Config = {
+        const dmcrChart1El = document.querySelector('#dmcr1');
+        const dmcrChart1Config = {
             series: [101],
-            labels: ['Daya Aktif (P)'],
+            labels: ['Tekanan'],
             chart: {
                 width: 400,
                 height: 300,
@@ -175,21 +186,21 @@
             }
         };
 
-        if (typeof dayaChart1El !== undefined && dayaChart1El !== null) {
-            const daya1 = new ApexCharts(dayaChart1El, dayaChart1Config);
-            daya1.render();
+        if (typeof dmcrChart1El !== undefined && dmcrChart1El !== null) {
+            const dmcr1 = new ApexCharts(dmcrChart1El, dmcrChart1Config);
+            dmcr1.render();
         }
     });
 
 </script>
 
-{{-- Chart arus 2 --}}
+{{-- Chart dmcr 2 --}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const dayaChart2El = document.querySelector('#daya2');
-        const dayaChart2Config = {
+        const dmcrChart2El = document.querySelector('#dmcr2');
+        const dmcrChart2Config = {
             series: [10],
-            labels: [' Daya Semu(S)'],
+            labels: ['Suhu Minyak'],
             chart: {
                 width: 400,
                 height: 300,
@@ -257,21 +268,21 @@
             }
         };
 
-        if (typeof dayaChart2El !== undefined && dayaChart2El !== null) {
-            const daya2 = new ApexCharts(dayaChart2El, dayaChart2Config);
-            daya2.render();
+        if (typeof dmcrChart2El !== undefined && dmcrChart2El !== null) {
+            const dmcr2 = new ApexCharts(dmcrChart2El, dmcrChart2Config);
+            dmcr2.render();
         }
     });
 
 </script>
 
-{{-- Chart daya 3 --}}
+{{-- Chart arus 3 --}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const dayaChart3El = document.querySelector('#daya3');
-        const dayaChart3Config = {
+        const dmcrChart3El = document.querySelector('#dmcr3');
+        const dmcrChart3Config = {
             series: [10],
-            labels: ['Daya Reaktif (Q)'],
+            labels: ['Suhu Ambient'],
             chart: {
                 width: 400,
                 height: 300,
@@ -339,14 +350,95 @@
             }
         };
 
-        if (typeof dayaChart3El !== undefined && dayaChart3El !== null) {
-            const daya3 = new ApexCharts(dayaChart3El, dayaChart3Config);
-            daya3.render();
+        if (typeof dmcrChart3El !== undefined && dmcrChart3El !== null) {
+            const dmcr3 = new ApexCharts(dmcrChart3El, dmcrChart3Config);
+            dmcr3.render();
         }
     });
 
 </script>
 
+{{-- Chart dmcr 4 --}}
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const dmcrChart4El = document.querySelector('#dmcr4');
+        const dmcrChart4Config = {
+            series: [10],
+            labels: ['Level Minyak'],
+            chart: {
+                width: 400,
+                height: 300,
+                type: 'radialBar',
+                offsetY: -20, // Offset untuk membuat setengah lingkaran
+            },
+            plotOptions: {
+                radialBar: {
+                    startAngle: -90,
+                    endAngle: 90,
+                    strokeWidth: '8',
+                    hollow: {
+                        margin: 2,
+                        size: '45%'
+                    },
+                    track: {
+                        strokeWidth: '50%',
+                        background: '#ddd'
+                    },
+                    dataLabels: {
+                        show: true,
+                        name: {
+                            offsetY: 15,
+                            color: '#697a8d',
+                            fontSize: '15px',
+                            fontWeight: '600',
+                            fontFamily: 'Arial'
+                        },
+                        value: {
+                            offsetY: -25,
+                            color: '#697a8d',
+                            fontSize: '32px',
+                            fontWeight: '700',
+                            fontFamily: 'Arial'
+                        }
+                    }
+                }
+            },
+            fill: {
+                type: 'solid',
+                colors: ['#fb8500']
+            },
+            stroke: {
+                lineCap: 'round'
+            },
+            grid: {
+                padding: {
+                    top: -10,
+                    bottom: -15,
+                    left: -10,
+                    right: -10
+                }
+            },
+            states: {
+                hover: {
+                    filter: {
+                        type: 'none'
+                    }
+                },
+                active: {
+                    filter: {
+                        type: 'none'
+                    }
+                }
+            }
+        };
+
+        if (typeof dmcrChart4El !== undefined && dmcrChart4El !== null) {
+            const dmcr4 = new ApexCharts(dmcrChart4El, dmcrChart4Config);
+            dmcr4.render();
+        }
+    });
+
+</script>
 <script src="{{ $chart->cdn() }}"></script>
 
 {{ $chart->script() }}

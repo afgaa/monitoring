@@ -1,7 +1,7 @@
 @extends('layouts.app', [
 'namePage' => '',
 'class' => 'login-page sidebar-mini ',
-'activePage' => 'daya',
+'activePage' => 'other',
 'backgroundImage' => asset('now') . "/img/bg14.jpg",
 ])
 
@@ -30,10 +30,10 @@
         <div class="col-lg-6">
             <div class="card card-chart">
                 <div class="card-header">
-                    <h5 class="card-category">Daya Aktif (P)</h5>
+                    <h5 class="card-category">Frekuensi</h5>
                 </div>
                 <div class="card-body">
-                    <div id="daya1"></div>
+                    <div id="hateg1"></div>
                 </div>
             </div>
         </div>
@@ -41,10 +41,10 @@
         <div class="col-lg-6">
             <div class="card card-chart">
                 <div class="card-header">
-                    <h5 class="card-category">Daya Semu(S)</h5>
+                    <h5 class="card-category">Power Factor</h5>
                 </div>
                 <div class="card-body">
-                    <div id="daya2"></div>
+                    <div id="hateg2"></div>
                 </div>
             </div>
         </div>
@@ -54,10 +54,10 @@
         <div class="col-md-6">
             <div class="card  card-tasks">
                 <div class="card-header ">
-                    <h5 class="card-category">Daya Reaktif (Q)</h5>
+                    <h5 class="card-category">CosPhi</h5>
                 </div>
                 <div class="card-body">
-                    <div id="daya3"></div>
+                    <div id="hateg3"></div>
                 </div>
             </div>
         </div>
@@ -101,13 +101,13 @@
 
 </script>
 
-{{-- Chart daya 1 --}}
+{{-- Chart hateg 1 --}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const dayaChart1El = document.querySelector('#daya1');
-        const dayaChart1Config = {
+        const hategChart1El = document.querySelector('#hateg1');
+        const hategChart1Config = {
             series: [101],
-            labels: ['Daya Aktif (P)'],
+            labels: ['Frekuensi'],
             chart: {
                 width: 400,
                 height: 300,
@@ -175,21 +175,21 @@
             }
         };
 
-        if (typeof dayaChart1El !== undefined && dayaChart1El !== null) {
-            const daya1 = new ApexCharts(dayaChart1El, dayaChart1Config);
-            daya1.render();
+        if (typeof hategChart1El !== undefined && hategChart1El !== null) {
+            const hateg1 = new ApexCharts(hategChart1El, hategChart1Config);
+            hateg1.render();
         }
     });
 
 </script>
 
-{{-- Chart arus 2 --}}
+{{-- Chart hateg 2 --}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const dayaChart2El = document.querySelector('#daya2');
-        const dayaChart2Config = {
+        const hategChart2El = document.querySelector('#hateg2');
+        const hategChart2Config = {
             series: [10],
-            labels: [' Daya Semu(S)'],
+            labels: ['Power Factor'],
             chart: {
                 width: 400,
                 height: 300,
@@ -257,21 +257,21 @@
             }
         };
 
-        if (typeof dayaChart2El !== undefined && dayaChart2El !== null) {
-            const daya2 = new ApexCharts(dayaChart2El, dayaChart2Config);
-            daya2.render();
+        if (typeof hategChart2El !== undefined && hategChart2El !== null) {
+            const hateg2 = new ApexCharts(hategChart2El, hategChart2Config);
+            hateg2.render();
         }
     });
 
 </script>
 
-{{-- Chart daya 3 --}}
+{{-- Chart hateg 3 --}}
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const dayaChart3El = document.querySelector('#daya3');
-        const dayaChart3Config = {
+        const hategChart3El = document.querySelector('#hateg3');
+        const hategChart3Config = {
             series: [10],
-            labels: ['Daya Reaktif (Q)'],
+            labels: ['CosPhi'],
             chart: {
                 width: 400,
                 height: 300,
@@ -339,9 +339,9 @@
             }
         };
 
-        if (typeof dayaChart3El !== undefined && dayaChart3El !== null) {
-            const daya3 = new ApexCharts(dayaChart3El, dayaChart3Config);
-            daya3.render();
+        if (typeof hategChart3El !== undefined && hategChart3El !== null) {
+            const hateg3 = new ApexCharts(hategChart3El, hategChart3Config);
+            hateg3.render();
         }
     });
 

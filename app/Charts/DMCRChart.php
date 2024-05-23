@@ -4,7 +4,7 @@ namespace App\Charts;
 
 use ArielMejiaDev\LarapexCharts\LarapexChart;
 
-class Tekanan1Chart
+class DMCRChart
 {
     protected $chart;
 

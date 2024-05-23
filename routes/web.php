@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TeganganController;
 use App\Http\Controllers\TekananController;
 use App\Http\Controllers\ArusController;
 use App\Http\Controllers\DayaController;
@@ -8,7 +9,12 @@ use App\Http\Controllers\PowerFaktorController;
 use App\Http\Controllers\HarmonisaController;
 use App\Http\Controllers\TemperaturController;
 use App\Http\Controllers\TemperatureController;
+use App\Http\Controllers\HArusController;
+use App\Http\Controllers\HTeganganController;
 use App\Http\Controllers\HariController;
+use App\Http\Controllers\DMCRController;
+use App\Http\Controllers\OtherController;
+
 
 
 /*
@@ -32,7 +38,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
+Route::get('/tegangan', [TeganganController::class, 'tegangan'])->name('tegangan');
 Route::get('/pressure', [TekananController::class, 'tekanan'])->name('tekanan');
+Route::get('/harus', [HArusController::class, 'harus'])->name('harus');
+Route::get('/htegangan', [HTeganganController::class, 'htegangan'])->name('htegangan');
+Route::get('/dmcr', [DMCRController::class, 'dmcr'])->name('dmcr');
+Route::get('/other', [OtherController::class, 'other'])->name('other');
 Route::get('/arus', [ArusController::class, 'arus'])->name('arus');
 Route::get('/daya', [DayaController::class, 'daya'])->name('daya');
 Route::get('/powerfaktor', [PowerFaktorController::class, 'powerfaktor'])->name('powerfaktor');
